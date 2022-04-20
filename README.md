@@ -22,3 +22,24 @@
 - IllegalArgumentException 이 발생하면 "[ERROR]" 로 시작하는 메시지를 출력하여야 한다.
 - IllegalArgumentException 이 발생되고 난 후 다시 입력을 받을 수 있어야 한다.
 - Exception 이 아닌 IllegalArgumentException, IllegalStateException 등과 같은 명확한 유형을 처리해야만 한다.
+
+## 프로그래밍 요구사항
+
+- JDK8 에서 동작할 것
+- camp.nextstep.edu.missionutils 의 Randoms 및 Console API 사용
+- ApplicationTest 는 반드시 통과
+- 자바 코드 컨벤션
+  - https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java
+- indent depth 는 1까지만 허용
+- stream api 사용금지, 람다는 허용
+- else 사용금지
+- 메소드 길이 10줄 이내
+- 일급콜렉션 활용
+  - https://developerfarm.wordpress.com/2012/02/01/object_calisthenics_/
+  - https://jojoldu.tistory.com/412
+- 모든 원시값과 문자열 포장
+  - https://developerfarm.wordpress.com/2012/01/27/object_calisthenics_4/
+- 도메인 로직에 단위 테스트를 구현
+  - MVC 패턴 기반으로 구현한 후 View, Controller를 제외한 Model에 대한 단위 테스트에 집중
+- 커밋 메시지 컨벤션 참고
+  - https://gist.github.com/stephenparish/9941e89d80e2bc58a153
