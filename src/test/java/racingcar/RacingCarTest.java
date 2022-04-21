@@ -42,8 +42,8 @@ public class RacingCarTest {
         assertThat(racingCar.getRaceProgress()).isEqualTo(currentProgress + 1);
     }
     @Test
-    @DisplayName("3이하 값을 받으면 멈춘다")
-    void 삼이하_값을_받으면_멈춘다() {
+    @DisplayName("3이하 값을 받으면 전진하지 않는다")
+    void 삼이하_값을_받으면_전진하지_않는다() {
         String name = "alpha";
         RacingCar racingCar = new RacingCar(name);
         int currentProgress = racingCar.getRaceProgress();
