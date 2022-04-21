@@ -1,26 +1,23 @@
 package racingcar;
 
 public class RacingCar {
-    public static final int PROGRESS_CONDITION = 4;
-    String name;
-    int raceProgress;
+    Name name;
+    RaceProgress raceProgress;
 
     public RacingCar(String name) {
-        if (name.length() > 5) {
-            throw new IllegalArgumentException("[ERROR]");
-        }
-        this.name = name;
+        this.name = new Name(name);
+        this.raceProgress = new RaceProgress();
     }
 
     public String getName() {
-        return this.name;
+        return this.name.getName();
     }
 
     public int getRaceProgress() {
-        return this.raceProgress;
+        return this.raceProgress.getProgress();
     }
 
     public void race(int number) {
-        if (number >= PROGRESS_CONDITION)  this.raceProgress++;
+        this.raceProgress.forwardProgress(number);
     }
 }

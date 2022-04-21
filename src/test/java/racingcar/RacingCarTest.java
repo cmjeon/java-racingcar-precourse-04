@@ -24,8 +24,17 @@ public class RacingCarTest {
             .hasMessageContaining("[ERROR]");
     }
     @Test
-    @DisplayName("4이상 값을 받으면 전진한다")
-    void 사이상_값을_받으면_전진한다() {
+    @DisplayName(("빈 이름을 설정하면 오류를 발생시킨다"))
+    void 빈_이름을_설정하면_오류를_발생시킨다() {
+        assertThatThrownBy(() -> {
+            String name = "";
+            RacingCar racingCar = new RacingCar(name);
+        }).isInstanceOf(IllegalArgumentException.class)
+            .hasMessageContaining("[ERROR]");
+    }
+    @Test
+    @DisplayName("4이상 값을 받으면 한칸 전진한다")
+    void 사이상_값을_받으면_한칸_전진한다() {
         String name = "alpha";
         RacingCar racingCar = new RacingCar(name);
         int currentProgress = racingCar.getRaceProgress();
