@@ -12,4 +12,5 @@ public class RaceProgress {
     public void forwardProgress(int number) {
         if (number >= PROGRESS_CONDITION)  this.progress++;
     }
+
 }
