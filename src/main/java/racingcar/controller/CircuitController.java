@@ -66,7 +66,7 @@ public class CircuitController {
         try {
             new LapCount(lapCount);
         } catch (Exception e) {
-가            System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
             return false;
         }
         return true;
