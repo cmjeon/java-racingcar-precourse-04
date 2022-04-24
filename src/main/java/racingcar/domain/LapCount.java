@@ -2,14 +2,18 @@ package racingcar.domain;
 
 public class LapCount {
     int lapCount;
+    public static final int MIN_LAP_COUNT_LENGTH = 1;
 
     public LapCount(int lapCount) {
-        if(validateLapCount(lapCount)) this.lapCount = lapCount;
-        else throw new IllegalArgumentException();
+        if(validateLapCount(lapCount)) {
+            this.lapCount = lapCount;
+            return;
+        }
+        throw new IllegalArgumentException("[ERROR] lapCount Size");
     }
 
     private boolean validateLapCount(int lapCount) {
-        if(lapCount > 0) return true;
+        if(MIN_LAP_COUNT_LENGTH <= lapCount) return true;
         else return false;
     }
 
