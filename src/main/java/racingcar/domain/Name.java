@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.domain;
 
 public class Name {
 
@@ -7,17 +7,18 @@ public class Name {
     public static final int MAX_NAME_LENGTH = 5;
 
     public Name(String name) {
-        if (!validationName(name)) {
-            throw new IllegalArgumentException("[ERROR]");
+        if (validationNameLength(name)) {
+            this.name = name;
+            return;
         }
-        this.name = name;
+        throw new IllegalArgumentException("[ERROR] Name Length");
     }
 
     public String getName() {
         return this.name;
     }
 
-    private boolean validationName(String name) {
+    private boolean validationNameLength(String name) {
         return (MIN_NAME_LENGTH <= name.length() && name.length() <= MAX_NAME_LENGTH);
     }
 }
