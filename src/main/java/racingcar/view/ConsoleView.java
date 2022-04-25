@@ -39,4 +39,8 @@ public class ConsoleView {
         resultMessage.setLength(resultMessage.length()-2);
         System.out.println(resultMessage.append(" 입니다."));
     }
+
+    public void printConsoleRunResult() {
+        System.out.println("실행 결과");
+    }
 }

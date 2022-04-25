@@ -73,7 +73,7 @@ public class CircuitController {
     }
 
     public void runCircuit() {
-        System.out.println("실행 결과");
+        consoleView.printConsoleRunResult();
         for(int i = 0; i < this.circuit.getLapCount().getLapCount(); i++) {
             ArrayList<RacingCar> racingCars = circuit.runLap();
             consoleView.printConsoleRacingCarRaceProgress(racingCars);
