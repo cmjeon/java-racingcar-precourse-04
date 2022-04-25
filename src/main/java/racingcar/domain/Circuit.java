@@ -24,7 +24,7 @@ public class Circuit {
     }
 
     public void makeRacingCars(ArrayList<String> nameList) throws IllegalArgumentException {
-        for(String name : nameList) {
+        for (String name : nameList) {
             this.racingCars.add(new RacingCar(name));
         }
     }
@@ -34,7 +34,7 @@ public class Circuit {
     }
 
     public ArrayList<RacingCar> runLap() {
-        for(RacingCar racingCar : this.getRacingCars()){
+        for (RacingCar racingCar : this.getRacingCars()) {
             racingCar.race(Randoms.pickNumberInRange(1, 9));
         }
         return this.racingCars;
@@ -43,7 +43,7 @@ public class Circuit {
     public ArrayList<String> getWinners() {
         int maxRaceProgress = this.getMaxRaceProgress(this.racingCars);
         ArrayList<String> winners = new ArrayList<String>();
-        for(RacingCar racingCar : this.racingCars) {
+        for (RacingCar racingCar : this.racingCars) {
             winners.add(this.getWinnerRacingCarName(maxRaceProgress, racingCar));
         }
         winners.removeIf(Objects::isNull);
@@ -51,11 +51,12 @@ public class Circuit {
     }
 
     private String getWinnerRacingCarName(int maxRaceProgress, RacingCar racingCar) {
-        if(racingCar.getRaceProgress() == maxRaceProgress) return racingCar.getName();
+        if (racingCar.getRaceProgress() == maxRaceProgress) return racingCar.getName();
         return null;
     }
 
     private int getMaxRaceProgress(ArrayList<RacingCar> racingCars) {
         return Collections.max(racingCars).getRaceProgress();
     }
+
 }

@@ -1,10 +1,11 @@
 package racingcar.domain;
 
 public class RacingCar implements Comparable<RacingCar> {
+
     Name name;
     RaceProgress raceProgress;
 
-    public RacingCar(String name) throws IllegalArgumentException{
+    public RacingCar(String name) throws IllegalArgumentException {
         this.name = new Name(name);
         this.raceProgress = new RaceProgress();
     }
@@ -25,4 +26,5 @@ public class RacingCar implements Comparable<RacingCar> {
     public int compareTo(RacingCar racingCar) {
         return (this.raceProgress.getProgress() > racingCar.raceProgress.getProgress()) ? 1 : -1;
     }
+
 }

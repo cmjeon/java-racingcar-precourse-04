@@ -21,4 +21,5 @@ public class Name {
     private boolean validationNameLength(String name) {
         return (MIN_NAME_LENGTH <= name.length() && name.length() <= MAX_NAME_LENGTH);
     }
+
 }

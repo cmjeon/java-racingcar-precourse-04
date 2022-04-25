@@ -25,12 +25,10 @@ public class CircuitController {
     }
 
     public void createRacingCars() {
-        String nameString;
         String[] names;
 
         do {
-            nameString = consoleView.getNameStringFromReadLine();
-            names = nameString.split(",");
+            names = consoleView.getNameStringFromReadLine().split(",");
         } while (!validateNames(names));
 
         ArrayList<String> nameList = new ArrayList<String>(Arrays.asList(names));
@@ -46,6 +44,7 @@ public class CircuitController {
         }
         return true;
     }
+
     void destructuringNames(String[] names) {
         for (String name : names) {
             new Name(name);
@@ -74,7 +73,7 @@ public class CircuitController {
 
     public void runCircuit() {
         consoleView.printConsoleRunResult();
-        for(int i = 0; i < this.circuit.getLapCount().getLapCount(); i++) {
+        for (int i = 0; i < this.circuit.getLapCount().getLapCount(); i++) {
             ArrayList<RacingCar> racingCars = circuit.runLap();
             consoleView.printConsoleRacingCarRaceProgress(racingCars);
             System.out.println();
@@ -85,4 +84,5 @@ public class CircuitController {
         ArrayList<String> winners = circuit.getWinners();
         consoleView.printWinner(winners);
     }
+
 }
